@@ -1,3 +1,14 @@
+/* Logo Styling */
+.logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo-img {
+    height: 120px; /* Adjust the size as needed */
+    width: auto;
+}
+
 /* General Reset */
 * {
     margin: 0;
@@ -9,28 +20,26 @@
 body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.8;
-    color: #fff; /* White text */
-    background-color: #000; /* Black background */
+    color: #fff;
+    background-color: #000;
     margin: 0;
     padding: 0;
-    scroll-behavior: smooth; /* Smooth scrolling effect */
 }
 
-/* Header Styling */
+/* Shared Header Styling (About and Index) */
 header {
     background-color: #000;
     color: #fff;
-    padding: 20px 0; /* Reduced padding */
+    padding: 20px 0;
     text-align: center;
-    position: relative; /* Allow header to scroll with page */
 }
 
-/* Reduce the size of header to avoid taking too much space */
-header h1 {
-    font-size: 4rem; /* Smaller size for header */
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 0.1rem; /* Spacing between letters */
+/* Flexbox Navbar for Index Page */
+.index-navbar ul {
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+    padding: 15px 0;
 }
 
 /* Navigation Styling */
@@ -55,7 +64,7 @@ nav ul li a {
 
 /* Hover effect for links */
 nav ul li a:hover {
-    color: #ff4500; /* Bright orange hover color */
+    color: #ff4500;
     transition: color 0.3s ease;
 }
 
@@ -78,7 +87,7 @@ nav ul li a:hover::after {
     transform-origin: bottom left;
 }
 
-/* Main Section Styling */
+/* Main Section Styling for About Page */
 main {
     padding: 100px 20px;
     max-width: 1200px;
@@ -86,27 +95,13 @@ main {
     text-align: center;
 }
 
-/* Section Styling */
 section {
     margin-bottom: 60px;
 }
 
-/* Paragraph Styling - Ensures no truncation */
-p {
-    font-size: 1.5rem;
-    color: #ccc; /* Light gray text */
-    margin-bottom: 40px;
-    max-width: 800px; /* Ensure text width doesn't exceed this */
-    margin: 0 auto;
-    white-space: normal; /* Allow text to wrap onto multiple lines */
-    overflow: visible; /* Make sure text is not clipped */
-    text-overflow: clip; /* Remove ellipses */
-    word-wrap: break-word; /* Break long words */
-}
-
 /* Section Heading Styling */
 section h2 {
-    font-size: 3.5rem; /* Large section headings */
+    font-size: 3.5rem;
     font-weight: bold;
     margin-bottom: 20px;
     letter-spacing: 0.1rem;
@@ -116,8 +111,21 @@ section h2 {
 /* Hover effect for headings */
 h2:hover {
     color: #ff4500;
-    transform: scale(1.1); /* Scale up the heading slightly */
+    transform: scale(1.1);
     transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Paragraph Styling */
+p {
+    font-size: 1.5rem;
+    color: #ccc;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    word-wrap: break-word;
 }
 
 /* Image Styling */
@@ -125,13 +133,13 @@ img {
     width: 80%;
     height: auto;
     margin-bottom: 40px;
-    border-radius: 10px; /* Rounded corners for images */
-    transition: transform 0.4s ease; /* Transition for hover effect */
+    border-radius: 10px;
+    transition: transform 0.4s ease;
 }
 
 /* Hover effect on images */
 img:hover {
-    transform: scale(1.05); /* Slight zoom-in effect */
+    transform: scale(1.05);
 }
 
 /* Footer Styling */
@@ -146,20 +154,61 @@ footer {
     width: 100%;
 }
 
-/* Hover effect on footer */
+/* Footer Hover Effect */
 footer:hover {
-    background-color: #ff4500; /* Change footer background on hover */
+    background-color: #ff4500;
+    transition: background-color 0.3s ease;
+}
+
+/* INDEX.HTML SPECIFIC STYLES */
+
+/* Flexbox Navbar for Index Page */
+.index-navbar ul {
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+    padding: 15px 0;
+}
+
+.index-navbar ul li {
+    margin: 0 15px;
+}
+
+.index-navbar ul li a:hover {
+    color: #ff4500;
+}
+
+/* CSS Grid for Main Content in index.html */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 50px;
+}
+
+/* Content Box Styling - Matching the Navbar Gray */
+.grid-item {
+    background-color: #333; /* Matching the navbar */
+    color: #fff; /* White text for contrast */
+    padding: 20px;
+    border: 1px solid #555;
+    border-radius: 8px;
+}
+
+/* Grid Item Hover Effect */
+.grid-item:hover {
+    background-color: #444; /* Slightly lighter on hover */
     transition: background-color 0.3s ease;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     header h1 {
-        font-size: 3rem; /* Smaller header on mobile */
+        font-size: 3rem;
     }
 
     section h2 {
-        font-size: 2.5rem; /* Smaller section headings on mobile */
+        font-size: 2.5rem;
     }
 
     p {
@@ -167,6 +216,10 @@ footer:hover {
     }
 
     img {
-        width: 100%; /* Images take full width on mobile */
+        width: 100%;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr;
     }
 }
