@@ -18,7 +18,7 @@
 
 /* Body Styling */
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
     line-height: 1.8;
     color: #fff;
     background-color: #000;
@@ -28,10 +28,28 @@ body {
 
 /* Shared Header Styling (About and Index) */
 header {
-    background-color: #000;
+    background-color: #000; /* Solid black background */
     color: #fff;
-    padding: 20px 0;
+    padding: 100px 20px; /* Increased padding for more impact */
     text-align: center;
+}
+
+header h1 {
+    font-size: 4rem; /* Larger font size for impact */
+    color: #fff;
+}
+
+header p {
+    font-size: 1.5rem;
+    color: #ccc;
+}
+
+/* Sticky Navigation */
+.index-navbar {
+    position: sticky;
+    top: 0;
+    background-color: #333;
+    z-index: 100;
 }
 
 /* Flexbox Navbar for Index Page */
@@ -144,38 +162,31 @@ img:hover {
 
 /* Footer Styling */
 footer {
-    background-color: #000;
-    color: #fff;
+    background-color: #333;
     padding: 20px 0;
     text-align: center;
     font-size: 1rem;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+    color: #fff;
 }
 
-/* Footer Hover Effect */
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+footer ul li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+footer ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
 footer:hover {
     background-color: #ff4500;
-    transition: background-color 0.3s ease;
-}
-
-/* INDEX.HTML SPECIFIC STYLES */
-
-/* Flexbox Navbar for Index Page */
-.index-navbar ul {
-    display: flex;
-    justify-content: center;
-    background-color: #333;
-    padding: 15px 0;
-}
-
-.index-navbar ul li {
-    margin: 0 15px;
-}
-
-.index-navbar ul li a:hover {
-    color: #ff4500;
 }
 
 /* CSS Grid for Main Content in index.html */
@@ -207,16 +218,16 @@ footer:hover {
         font-size: 3rem;
     }
 
-    section h2 {
+    header p {
+        font-size: 1.2rem;
+    }
+
+    h2 {
         font-size: 2.5rem;
     }
 
     p {
         font-size: 1.2rem;
-    }
-
-    img {
-        width: 100%;
     }
 
     .grid-container {
