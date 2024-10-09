@@ -11,18 +11,27 @@
 </head>
 <body>
 
-    <header>
-        <h1>About Kolade Ayeni</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="resume.html">Resume</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+    <!-- Header Section -->
+    <header class="index-header">
+        <!-- Logo Image -->
+        <div class="logo">
+            <img src="images/Logo2.jpg" alt="Portfolio Logo" class="logo-img">
+        </div>
+
+        <div class="header-content">
+            <h1>About Kolade Ayeni</h1>
+        </div>
     </header>
+
+    <!-- Navigation Bar using Flexbox -->
+    <nav class="index-navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
 
     <main>
         <section data-aos="fade-up">
@@ -43,8 +52,15 @@
             <img src="images/nsbe.jpg" alt="Kolade Ayeni as NSBE president at the Fall Regional Conference">
         </section>
 
+        <!-- Footer Section -->
         <footer>
             <p>&copy; 2024 Kolade Ayeni. All rights reserved.</p>
+            <ul class="footer-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
         </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
