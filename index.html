@@ -5,54 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Portfolio</title>
     <link rel="stylesheet" href="css/styles.css">
+
+    <!-- AOS (Animate on Scroll) Library -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+    <!-- jQuery for Smooth Scrolling -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Typed.js for Typing Effect -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 </head>
 <body>
 
     <!-- Header Section -->
     <header class="index-header">
-        <!-- Logo Image -->
         <div class="logo">
             <img src="images/Logo2.jpg" alt="Portfolio Logo" class="logo-img">
         </div>
-
         <div class="header-content">
             <h1>Kolade Ayeni</h1>
-            <p>A Computer Science student at Clarkson University aspiring to be a software engineer.</p>
+            <p id="typed-output"></p> <!-- Typed.js output here -->
         </div>
     </header>
 
-    <!-- Navigation Bar using Flexbox -->
+    <!-- Navigation Bar -->
     <nav class="index-navbar">
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
     <!-- Main Content using CSS Grid -->
     <main class="grid-container">
-        <!-- Biography Preview Section -->
-        <section class="grid-item biography">
+        <!-- About Me Section -->
+        <section id="about" class="grid-item biography" data-aos="fade-up">
             <h2>About Me</h2>
             <p>Currently pursuing a Bachelor's degree in Computer Science and Mathematics at Clarkson University, I am passionate about software development and aspire to make an impact in the tech industry. <a href="about.html">Read more...</a></p>
         </section>
 
-        <!-- Client Reviews Section -->
-        <section class="grid-item reviews">
-            <h2>Client Reviews</h2>
-            <p>Preview of reviews or testimonials. <a href="reviews.html">See more...</a></p>
-        </section>
-
         <!-- Projects Section -->
-        <section class="grid-item projects">
+        <section id="projects" class="grid-item projects" data-aos="fade-right">
             <h2>Recent Projects</h2>
-            <p>Take a look at some of my recent projects that demonstrate my skills and passion for software development. <a href="projects.html">View projects...</a></p>
-            
-            <!-- Media Card Preview -->
             <div class="media-card-preview">
-                <!-- Media Card Preview 1: Youth Soccer League Registration Management System -->
                 <div class="media-card">
                     <img src="images/soccer-league.jpg" alt="Youth Soccer League Registration System">
                     <div class="media-card-content">
@@ -62,7 +60,6 @@
                     </div>
                 </div>
 
-                <!-- Media Card Preview 2: University Management System (UMS) -->
                 <div class="media-card">
                     <img src="images/ums.jpg" alt="University Management System (UMS)">
                     <div class="media-card-content">
@@ -72,7 +69,6 @@
                     </div>
                 </div>
 
-                <!-- Media Card Preview 3: FileViewer Application -->
                 <div class="media-card">
                     <img src="images/fileviewer.jpg" alt="FileViewer Application">
                     <div class="media-card-content">
@@ -83,18 +79,49 @@
                 </div>
             </div>
         </section>
+
+        <!-- Client Reviews Section -->
+        <section id="reviews" class="grid-item reviews" data-aos="fade-left">
+            <h2>Client Reviews</h2>
+            <p>Preview of reviews or testimonials. <a href="reviews.html">See more...</a></p>
+        </section>
     </main>
 
     <!-- Footer Section -->
-    <footer>
+    <footer id="contact">
         <p>&copy; 2024 Kolade Ayeni. All Rights Reserved.</p>
         <ul class="footer-nav">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
     </footer>
+
+    <!-- Initialize AOS -->
+    <script>
+        AOS.init();
+    </script>
+
+    <!-- Typed.js Typing Effect -->
+    <script>
+        var typed = new Typed('#typed-output', {
+            strings: ["A Computer Science student at Clarkson University", "Aspiring to be a Software Engineer"],
+            typeSpeed: 50,
+            backSpeed: 25,
+            loop: true
+        });
+    </script>
+
+    <!-- Smooth Scroll with jQuery -->
+    <script>
+        $('nav a').on('click', function(event) {
+            event.preventDefault();
+            $('html, body').animate({
+                scrollTop: $($.attr(this, 'href')).offset().top
+            }, 800);
+        });
+    </script>
 
 </body>
 </html>

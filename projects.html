@@ -5,35 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Projects</title>
     <link rel="stylesheet" href="css/styles.css">
+
+    <!-- AOS (Animate on Scroll) -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+    <!-- jQuery for Smooth Scrolling -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
 
     <!-- Header Section -->
     <header class="index-header">
-        <!-- Logo Image -->
         <div class="logo">
             <img src="images/Logo2.jpg" alt="Portfolio Logo" class="logo-img">
         </div>
-
         <div class="header-content">
             <h1>My Projects</h1>
         </div>
     </header>
 
-    <!-- Navigation Bar using Flexbox -->
-    <nav class="index-navbar">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
+    <!-- Navigation Bar -->
+<nav class="index-navbar">
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
 
     <!-- Media Card Gallery Section -->
     <div class="media-gallery">
         <!-- Media Card 1 -->
-        <div class="media-card">
+        <div class="media-card" data-aos="fade-up">
             <img src="images/soccer-league.jpg" alt="Youth Soccer League Registration Management System">
             <div class="media-card-content">
                 <h3>Youth Soccer League Registration System</h3>
@@ -42,38 +48,38 @@
             </div>
         </div>
 
-        <!-- Media Card 2: University Management System (UMS) -->
-        <div class="media-card">
+        <!-- Media Card 2 -->
+        <div class="media-card" data-aos="fade-right">
             <img src="images/ums.jpg" alt="University Management System (UMS)">
             <div class="media-card-content">
                 <h3>University Management System (UMS)</h3>
-                <p>Engineered a UMS with MySQL, enabling dynamic roster sorting and course queries for admins, professors, and students. Led a team in developing and deploying a scalable web app using Django ORM and templates, with comprehensive documentation.</p>
+                <p>Engineered a UMS with MySQL, enabling dynamic roster sorting and course queries for admins, professors, and students.</p>
                 <a href="#">Learn More</a>
             </div>
         </div>
 
-        <!-- Media Card 3: FileViewer Application -->
-        <div class="media-card">
+        <!-- Media Card 3 -->
+        <div class="media-card" data-aos="fade-left">
             <img src="images/fileviewer.jpg" alt="FileViewer Application">
             <div class="media-card-content">
                 <h3>FileViewer Application</h3>
-                <p>Developed a File Viewer Application in C++, facilitating intuitive file interaction and management across various formats. Implemented features for enhanced navigation and file manipulation, optimizing the user experience and system performance.</p>
+                <p>Developed a File Viewer Application in C++, facilitating intuitive file interaction and management across various formats.</p>
                 <a href="#">Learn More</a>
             </div>
         </div>
 
-        <!-- Media Card 4: Tic-Tac-Toe Project -->
-        <div class="media-card">
+        <!-- Media Card 4 -->
+        <div class="media-card" data-aos="fade-up">
             <img src="images/tictactoe.jpeg" alt="Tic-Tac-Toe Project">
             <div class="media-card-content">
                 <h3>Tic-Tac-Toe Game</h3>
-                <p>Developed a two-player Tic-Tac-Toe game with additional functionality for playing against the computer using Python's random module. The project utilizes Pygame, Sys, and Numpy modules and incorporates various built-in functions to check for wins, draw lines, and manage game states.</p>
+                <p>Developed a two-player Tic-Tac-Toe game with functionality for AI-based play using Python's random module and Pygame.</p>
                 <a href="#">Learn More</a>
             </div>
         </div>
 
-        <!-- Media Card 5 -->
-        <div class="media-card">
+        <!-- Additional Media Cards -->
+        <div class="media-card" data-aos="fade-right">
             <img src="images/project5.jpg" alt="Project 5">
             <div class="media-card-content">
                 <h3>Project 5</h3>
@@ -82,8 +88,7 @@
             </div>
         </div>
 
-        <!-- Media Card 6 -->
-        <div class="media-card">
+        <div class="media-card" data-aos="fade-left">
             <img src="images/project6.jpg" alt="Project 6">
             <div class="media-card-content">
                 <h3>Project 6</h3>
@@ -92,8 +97,7 @@
             </div>
         </div>
 
-        <!-- Media Card 7 -->
-        <div class="media-card">
+        <div class="media-card" data-aos="fade-up">
             <img src="images/project7.jpg" alt="Project 7">
             <div class="media-card-content">
                 <h3>Project 7</h3>
@@ -102,8 +106,7 @@
             </div>
         </div>
 
-        <!-- Media Card 8 -->
-        <div class="media-card">
+        <div class="media-card" data-aos="fade-right">
             <img src="images/project8.jpg" alt="Project 8">
             <div class="media-card-content">
                 <h3>Project 8</h3>
@@ -112,8 +115,7 @@
             </div>
         </div>
 
-        <!-- Media Card 9 -->
-        <div class="media-card">
+        <div class="media-card" data-aos="fade-left">
             <img src="images/project9.jpg" alt="Project 9">
             <div class="media-card-content">
                 <h3>Project 9</h3>
@@ -133,6 +135,21 @@
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </footer>
+
+    <!-- Initialize AOS -->
+    <script>
+        AOS.init();
+    </script>
+
+    <!-- Smooth Scroll Script -->
+    <script>
+        $('nav a').on('click', function(event) {
+            event.preventDefault();
+            $('html, body').animate({
+                scrollTop: $($.attr(this, 'href')).offset().top
+            }, 800);
+        });
+    </script>
 
 </body>
 </html>
