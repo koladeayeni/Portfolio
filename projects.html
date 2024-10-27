@@ -30,7 +30,7 @@
     <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="projects.html">Projects</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
         <li><a href="contact.html">Contact</a></li>
     </ul>
 </nav>
@@ -50,7 +50,7 @@
 
         <!-- Media Card 2 -->
         <div class="media-card" data-aos="fade-right">
-            <img src="images/ums.jpg" alt="University Management System (UMS)">
+            <img src="images/ums.png" alt="University Management System (UMS)">
             <div class="media-card-content">
                 <h3>University Management System (UMS)</h3>
                 <p>Engineered a UMS with MySQL, enabling dynamic roster sorting and course queries for admins, professors, and students.</p>
@@ -80,10 +80,10 @@
 
         <!-- Additional Media Cards -->
         <div class="media-card" data-aos="fade-right">
-            <img src="images/project5.jpg" alt="Project 5">
+            <img src="images/upf.png" alt="Advanced User Profile Form">
             <div class="media-card-content">
-                <h3>Project 5</h3>
-                <p>A brief description of Project 5.</p>
+                <h3>Advanced User Profile Form</h3>
+                <p>A modern user profile form with a dark theme, featuring fields like Full Name, Address, Phone Number, and Password. It’s secure and user-friendly, with validation, sanitization, and password hashing.</p>
                 <a href="#">Learn More</a>
             </div>
         </div>
@@ -131,7 +131,7 @@
         <ul class="footer-nav">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="projects.html">Projects</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </footer>
@@ -142,14 +142,18 @@
     </script>
 
     <!-- Smooth Scroll Script -->
-    <script>
-        $('nav a').on('click', function(event) {
+<script>
+    $('nav a').on('click', function(event) {
+        // Only apply smooth scrolling for links that are anchors within the page
+        if ($(this).attr('href').startsWith('#')) {
             event.preventDefault();
             $('html, body').animate({
                 scrollTop: $($.attr(this, 'href')).offset().top
             }, 800);
-        });
-    </script>
+        }
+    });
+</script>
+
 
 </body>
 </html>

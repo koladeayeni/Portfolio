@@ -32,10 +32,10 @@
     <!-- Navigation Bar -->
     <nav class="index-navbar">
         <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#reviews">Reviews</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 
@@ -61,7 +61,7 @@
                 </div>
 
                 <div class="media-card">
-                    <img src="images/ums.jpg" alt="University Management System (UMS)">
+                    <img src="images/ums.png" alt="University Management System (UMS)">
                     <div class="media-card-content">
                         <h3>University Management System (UMS)</h3>
                         <p>Engineered a UMS with MySQL, enabling dynamic roster sorting and course queries for admins, professors, and students.</p>
@@ -91,10 +91,10 @@
     <footer id="contact">
         <p>&copy; 2024 Kolade Ayeni. All Rights Reserved.</p>
         <ul class="footer-nav">
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#reviews">Reviews</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
     </footer>
 
@@ -114,14 +114,17 @@
     </script>
 
     <!-- Smooth Scroll with jQuery -->
-    <script>
-        $('nav a').on('click', function(event) {
+<script>
+    $('nav a').on('click', function(event) {
+        // Only apply smooth scrolling if the link is an anchor within the page
+        if ($(this).attr('href').startsWith('#')) {
             event.preventDefault();
             $('html, body').animate({
                 scrollTop: $($.attr(this, 'href')).offset().top
             }, 800);
-        });
-    </script>
+        }
+    });
+</script>
 
 </body>
 </html>

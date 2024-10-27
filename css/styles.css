@@ -303,3 +303,62 @@ footer:hover {
         grid-template-columns: 1fr;
     }
 }
+
+/* Contact Form Styling */
+.contact-form {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #222; /* Dark background for form */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.contact-form h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #ff6347; 
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    font-weight: bold;
+    display: block;
+    margin-top: 15px;
+    color: #fff;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background-color: #333; /* Form input background */
+    color: #fff;
+    font-size: 1rem;
+}
+
+.contact-form textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.contact-form button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #ff6347; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.contact-form button[type="submit"]:hover {
+    background-color: #ff6347; 
+}
+
